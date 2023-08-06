@@ -6,7 +6,7 @@ import 'package:notes/modules/auth/domain/repository/base_auth_repository.dart';
 class LoginUsecase{
   BaseAuthRepository baseAuthRepository;
   LoginUsecase(this.baseAuthRepository);
-   Future<Either<Failure, Auth>> call(String email,String password) async{
+   Future<Either<Failure, Auth>> call({required String email,required String password}) async{
     return await baseAuthRepository.login(email: email,password: password);
   }
 }

@@ -26,6 +26,7 @@ class AuthRemoteDataSource extends BaseAuthRemoteDataSource {
       data: body,
     );
     if (response.statusCode == 200) {
+      print("mohamed");
       return AuthModel.fromJson(response.data!["data"]);
     } else {
       throw ServerExceptions(

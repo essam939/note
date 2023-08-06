@@ -13,7 +13,7 @@ part 'auth_event.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUsecase loginUsecase;
 
-  AuthBloc(this.loginUsecase, )
+  AuthBloc(this.loginUsecase )
       : super(AuthState()) {
     on<AuthEvent>((event, emit) async {
       SharedPreferences pref = await SharedPreferences.getInstance();
@@ -23,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             loginState: RequestState.loading,
           ));
           Either<Failure, Auth> result =
-              await loginUsecase(event.email, event.password);
+              await loginUsecase(email: event.email,password: event.password);
           result.fold(
             (Failure l) => emit(state.copyWith(
                 loginState: RequestState.error,

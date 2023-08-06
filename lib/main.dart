@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/core/services/service_locator.dart';
 import 'package:notes/modules/auth/presentation/controller/bloc/auth_bloc.dart';
+import 'package:notes/modules/auth/presentation/screens/login_screen.dart';
 import 'package:notes/modules/todo/presintaion/screens/home_screen.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
@@ -34,9 +35,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+
         ),
-        home: const HomeScreen(),
+        home: const LoginScreen(),
       ),
     );
   }
